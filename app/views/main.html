@@ -1,0 +1,20 @@
+<div class="jumbotron" ng-app="">
+  <h1>Plus vacacional</h1>
+  <p class="lead">
+    <img src="images/burns.gif" alt="I'm Burns"><br>
+  </p>
+
+  <form role="form">
+    <div class="input-group">
+      <input type="number" class="form-control" placeholder="Sueldo" ng-model="sueldo">
+    </div>
+
+    <div class="input-group">
+      <input type="number" class="form-control" placeholder="Dias de vacaciones" ng-model="diasVacaciones">
+    </div>
+  </form>
+
+  <h3 ng-if="sueldo && diasVacaciones">
+    Tu plus es de: {{sueldo / 30 * (30 - diasVacaciones) + sueldo / 25 * diasVacaciones - sueldo | currency }}
+  </h3>
+</div>
